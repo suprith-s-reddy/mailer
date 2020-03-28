@@ -1,0 +1,1 @@
+exports.SendEmailService = require('./sendMail');

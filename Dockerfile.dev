@@ -1,0 +1,20 @@
+# use node alpine
+FROM node:alpine
+# set the working directory in the container
+WORKDIR /usr/app
+# COPY the package json and package json lock files
+COPY package*.json ./
+# perform npm install
+RUN npm install
+# copy all files to the work directory
+COPY . .
+RUN mkdir logs
+# perform code linter
+RUN npm run lint
+# perform npm test
+RUN npm test
+# run the command
+CMD ["npm", "run", "start-staging"]
+
+
+

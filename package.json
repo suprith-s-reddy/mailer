@@ -1,0 +1,49 @@
+{
+    "name": "mailer",
+    "version": "1.0.0",
+    "description": "This is a mailing service",
+    "main": "app.js",
+    "scripts": {
+        "start-prod": "PORT=3000 node ./bin/www",
+        "start-staging": "PORT=3000 node ./bin/www",
+        "dev": "PORT=3000 nodemon ./bin/www",
+        "lint": "eslint --ignore-path .gitignore .",
+        "test": "npm run test:integration",
+        "test:integration": "NODE_ENV=test SR_SECRET=suprithreddy123 MAILER_URL=http://localhost MAILER_PORT=3000 mocha test/integration",
+        "cover": "nyc npm run cover:integration && npm run cover:report",
+        "cover:integration": "nyc npm run test:integration",
+        "cover:report": "npx nyc report --reporter=html"
+    },
+    "author": "hello@suprithreddy.com <Suprith Reddy>",
+    "license": "ISC",
+    "dependencies": {
+        "bluebird": "^3.5.3",
+        "body-parser": "^1.18.3",
+        "chai": "^4.2.0",
+        "chai-http": "^4.3.0",
+        "compression": "^1.7.3",
+        "cookie-parser": "^1.4.3",
+        "debug": "^4.1.1",
+        "ejs": "^2.6.1",
+        "express": "^4.16.4",
+        "express-interceptor": "^1.2.0",
+        "express-validator": "^5.3.1",
+        "fs-extra": "^7.0.1",
+        "helmet": "^3.15.0",
+        "http": "0.0.0",
+        "mailgun-js": "^0.22.0",
+        "mime-types": "^2.1.21",
+        "mocha": "^6.2.0",
+        "morgan": "^1.9.1",
+        "multer": "^1.4.1",
+        "nodemon": "^1.18.9",
+        "path": "^0.12.7",
+        "pug": "^2.0.3",
+        "underscore": "^1.9.1",
+        "winston": "^2.4.0"
+    },
+    "devDependencies": {
+        "eslint": "^6.2.2",
+        "nyc": "^14.1.1"
+    }
+}

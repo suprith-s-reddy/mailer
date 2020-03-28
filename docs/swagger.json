@@ -1,0 +1,200 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Mailer Documentation",
+        "version": "1.0.0",
+        "termsOfService": "https://ophigo.com/terms/",
+        "contact": {
+            "email": "developers@ophigo.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "paths": {
+        "send-mail": {
+            "post": {
+                "tags": [
+                    "Mailer"
+                ],
+                "summary": "Main endpoint to send email",
+                "description": "",
+                "operationId": "sendEmail",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [{
+                        "in": "form",
+                        "name": "from",
+                        "description": "",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "form",
+                        "name": "to",
+                        "description": "",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "form",
+                        "name": "cc",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "form",
+                        "name": "bcc",
+                        "description": "",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "form",
+                        "name": "templateName",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "form",
+                        "name": "bodyContent",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "form",
+                        "name": "attachment",
+                        "description": "",
+                        "required": false,
+                        "schema": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    {
+                        "in": "form",
+                        "name": "html",
+                        "description": "",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Mail queued successfully",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "msg": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "msg": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal server error",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "code": {
+                                    "type": "string"
+                                },
+                                "msg": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [{
+                    "petstore_auth": [
+                        "write:pets",
+                        "read:pets"
+                    ]
+                }]
+            }
+        }
+    },
+    "consumes": [
+        "application/json"
+    ],
+    "definitions": {
+        "MailTemplate": {
+            "type": "object",
+            "required": [
+                "to",
+                "bodyContent",
+                "templateName"
+            ],
+            "properties": {
+                "from": {
+                    "type": "string"
+                },
+                "to": {
+                    "type": "string"
+                },
+                "cc": {
+                    "type": "string"
+                },
+                "bcc": {
+                    "type": "string"
+                },
+                "templateName": {
+                    "type": "string"
+                },
+                "bodyContent": {
+                    "type": "object",
+                    "properties": {}
+                },
+                "attachment": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "html": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
