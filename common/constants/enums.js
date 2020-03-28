@@ -1,5 +1,5 @@
 module.exports = {
     templateNames: [
-        'welcome'
+        'sr-welcome'
     ]
 };

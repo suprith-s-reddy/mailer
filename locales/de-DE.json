@@ -1,0 +1,15 @@
+{
+    "general": {
+        "rightsReserved": "Alle Rechte vorbehalten",
+        "ourAddress": "Unsere Adresse"
+    },
+    "welcome": {
+        "greeting": "Hallo",
+        "welcome": "willkommen bei Suprith Reddy.",
+        "title": "Suprith Reddy Mailer",
+        "subject": "Willkommen bei Suprith Reddy!",
+        "aboutMe": "Hallo ich bin Suprith Reddy. Willkommen von meinem test email",
+        "signature": "Viele Grüße",
+        "team": "Suprith Reddy"
+    }
+}
