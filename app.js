@@ -14,6 +14,20 @@ logger = require('./common/middlewares/logger');
 const routes = require('./routes/index');
 
 const app = express();
+
+const swaggerUi = require('swagger-ui-express');
+
+let options = {
+    explorer: true,
+    swaggerOptions: {
+        urls: [{
+            url: 'http://localhost:3000/swagger',
+            name: 'mailer'
+        }]
+    }
+};
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(null, options));
 app.set('trust proxy', true);
 app.use(helmet());
 

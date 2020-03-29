@@ -35,6 +35,7 @@ exports.validateRequest = async (req, res, next) => {
 
 exports.sendMail = async (req, res, next) => {
     try {
+        console.log('reached ');
         let response = await SendEmailService.sendTemplateMail(req.body, req.files);
         if (response) {
             return res.status(statusCodes.OK).send({

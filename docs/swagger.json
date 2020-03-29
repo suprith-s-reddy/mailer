@@ -90,15 +90,6 @@
                             "type": "array",
                             "items": {}
                         }
-                    },
-                    {
-                        "in": "form",
-                        "name": "html",
-                        "description": "",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
                     }
                 ],
                 "responses": {
@@ -188,11 +179,8 @@
                 "attachment": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": "file"
                     }
-                },
-                "html": {
-                    "type": "string"
                 }
             }
         }

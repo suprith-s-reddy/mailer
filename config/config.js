@@ -5,12 +5,12 @@ module.exports = {
     allowedLanguages: ['de-DE', 'en-GB'],
     mail: {
         domain: 'mg.suprithreddy.com',
-        apiKey: '',
+        apiKey: 'Your API Key goes here',
         from: 'Suprith Reddy  <hello@suprithreddy.com>',
         defaultPath: 'views/mailTemplates',
         companyDirectory: 'suprith-dev'
     },
     mailTemplates: {
-        WELCOME: 'welcome',
+        WELCOME: 'sr-welcome',
     }
 };
