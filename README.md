@@ -1,6 +1,6 @@
 # Mailer api
-A wrapper api for a mailing microservice using Mailgun and EJS. Completely tested in a production environment for sending bulk asynchronous emails, with custom made ejs templates. Designed to use in microservices environments. The api also includes inbuilt request logging using winston logger.
 
+A wrapper api for a mailing microservice(can also be used independently) using Mailgun and EJS. Completely tested in a production environment for sending bulk asynchronous emails, with custom made ejs templates. Designed to use in microservices environments. The api also includes inbuilt request logging using winston logger.
 
 
 ## How to use/ run the api
@@ -18,7 +18,8 @@ A wrapper api for a mailing microservice using Mailgun and EJS. Completely teste
     apiKey: 'YOUR MAILGUN API KEY GOES HERE',
     from: 'YOUR DEFAULT FROM EMAIL GOES HERE',
 
-    # step 4 - run the command
+    # step 4 - run the api
+
     npm run dev
 
 Your api is running in http://localhost:3000/ , check for the api readiness using the index route in the browser. You should see a welcome page.
@@ -28,7 +29,7 @@ Your api is running in http://localhost:3000/ , check for the api readiness usin
 The complete api documentation can be acessed using http://localhost:3000/docs. The documentation is built on swagger.
 
 ## License
-Apache 2.0 license
+Apache 2.0 license (apache-2.0)
 
 
 
